@@ -1,0 +1,55 @@
+<template>
+    <lightning-card title="Record Form : Read" icon-name="standard:contact">
+<lightning-record-form 
+record-id={recordId}
+object-api-name={objectName}
+fields = {fields}
+mode= "readOnly"
+>
+</lightning-record-form>
+    </lightning-card>
+<lightning-card title="Record Form : View" icon-name="standard:contact">
+        <lightning-record-form 
+        record-id={recordId}
+        object-api-name={objectName}
+        fields = {fields}
+        mode= "View"
+        >
+        </lightning-record-form>
+            </lightning-card>
+<lightning-card title="Record Form : Edit" icon-name="standard:contact">
+                <lightning-record-form 
+                record-id={recordId}
+                object-api-name={objectName}
+                fields = {fields}
+                mode= "Edit"
+                >
+        </lightning-record-form>
+                </lightning-card>
+<lightning-card title="Record View Form" icon-name="standard:icon">
+<lightning-record-view-form
+    record-id={recordId}
+    object-api-name={objectName}>
+<lightning-output-field field-name="First_Name__c"></lightning-output-field>
+<lightning-output-field field-name="Last_Name__c"></lightning-output-field>
+<lightning-output-field field-name="Phone"></lightning-output-field>
+<lightning-output-field field-name="Email"></lightning-output-field>
+</lightning-record-view-form>
+        </lightning-card>
+
+    <lightning-card title="Record Edit Form" icon-name="standard:icon">
+    <lightning-record-edit-form
+        record-id={recordId}
+        object-api-name={objectName}
+        onerror={handleError}
+        onload={handleLoad}
+        onsuccess={handleSuccess}>
+    <lightning-input-field field-name="First_Name__c"></lightning-input-field>
+    <lightning-input-field field-name="Last_Name__c"></lightning-input-field>
+    <lightning-input-field field-name="Phone"></lightning-input-field>
+    <lightning-input-field field-name="Email"></lightning-input-field>
+    <lightning-button label="submit" variant="brand" type="submit"></lightning-button>
+    </lightning-record-edit-form>
+            </lightning-card>
+        
+</template>
